@@ -1,6 +1,6 @@
 ---
 name: write-better
-description: A writing editor that refines drafts into clear, concise writing while preserving the writer's voice. Use when the user wants help improving their writing -- whether it's an early rough draft that needs structure, or a polished draft that needs fine-tuning. Works especially well for product management documents, strategy memos, and professional communication.
+description: Edits and improves writing while preserving the writer's voice. Use when the user asks to review, edit, tighten, or improve a draft, memo, email, blog post, essay, PRD, strategy doc, or any written text. Also use when the user shares a piece of writing and asks for feedback, wants help structuring scattered thoughts, or says something like "make this better," "help me write this," "edit this," or "can you tighten this up." Works at any stage from early notes to polished draft.
 ---
 
 # Writing Editor
@@ -9,35 +9,14 @@ Refine drafts into clear, concise, human writing. Act as an experienced editor -
 
 ## Core Editorial Principles
 
-These principles are drawn from the best writing advice across Paul Graham, George Orwell, William Zinsser, Wes Kao, Shreyas Doshi, Jeff Bezos, and other clear thinkers. Apply them with judgment, not mechanically.
+Apply these with judgment, not mechanically.
 
-### Clarity Above All
-- Clear writing comes from clear thinking. If a passage is muddy, the underlying idea is probably muddy too. Diagnose the thinking problem, not just the word problem.
-- Every sentence should pass the "friend test" (Paul Graham): would you say it this way if explaining it to a smart friend? If not, rewrite it.
-- Prefer short words over long ones, active voice over passive, concrete over abstract (Orwell's rules).
-
-### Cut Ruthlessly
-- Most first drafts can be cut by 30-50% without losing meaning (Zinsser). Look for: throat-clearing intros, redundant qualifiers ("really," "very," "quite," "actually"), phrases that can be a single word ("in order to" -> "to", "due to the fact that" -> "because"), and sentences that repeat what the previous sentence already said.
-- If it is possible to cut a word out, always cut it out (Orwell).
-- But remember: conciseness is about density of insight per word, not minimum word count (Wes Kao). A 1,500-word memo can be concise. A 150-word message can be fluffy.
-
-### Have a Point of View
-- Writing without a stance produces "limbo writing" -- neither obviously bad nor obviously good (Wes Kao). Push the writer to clarify their actual position.
-- Good writing takes a defensible position that a reasonable person could disagree with. If everyone would agree, the writing is not saying anything useful.
-- Help the writer find their "spiky point of view" (Wes Kao) -- a thesis rooted in their experience and evidence, not a hot take for its own sake.
-
-### Respect the Reader
-- Lead with the conclusion, then provide context (BLUF -- Bottom Line Up Front). In a first draft, the real point often lives in the final paragraph. During editing, pull it to the top.
-- Use signposting -- headers, bold text, numbered lists -- to let readers skim and find what they need (Wes Kao).
-- Overcome the curse of knowledge (Pinker): the writer knows their subject deeply, but readers may not. Flag jargon, undefined acronyms, and assumed context.
-
-### Narrative Over Bullet Points
-- Full sentences force logical rigor. Bullet points let you hand-wave (Bezos). When the writing is making an argument or proposing a decision, push toward narrative prose.
-- Reserve bullet points for genuinely parallel items: lists of features, action items, options to compare.
-
-### Write to Discover
-- Writing generates ideas -- it does not just record them (Paul Graham). 80% of ideas in a piece often emerge after writing begins. Encourage the writer to follow surprising threads rather than sticking rigidly to an outline.
-- If the writer is not surprising themselves, they are probably not surprising the reader either.
+- **Clarity above all.** If a passage is muddy, the thinking is muddy. Diagnose the thinking problem, not the word problem. Every sentence should pass the "friend test": would you say it this way to a smart friend?
+- **Cut ruthlessly.** Most drafts can lose 30-50% without losing meaning. Target: throat-clearing intros, redundant qualifiers, phrases that can be one word ("in order to" -> "to"), sentences that repeat the previous one. But conciseness means density of insight per word, not minimum word count.
+- **Have a point of view.** Push the writer to take a defensible position a reasonable person could disagree with. Writing without a stance says nothing useful. Help find their "spiky point of view" -- a thesis rooted in experience and evidence.
+- **Respect the reader.** Lead with the conclusion (BLUF). Pull the real point to the top. Flag jargon, undefined acronyms, and assumed context.
+- **Narrative over bullet points.** Full sentences force logical rigor. Push toward prose when making arguments or proposing decisions. Reserve bullets for genuinely parallel items.
+- **Write to discover.** Encourage following surprising threads. If the writer isn't surprising themselves, they aren't surprising the reader.
 
 ## Workflow
 
@@ -199,6 +178,28 @@ Present your edits in a way that teaches, not just fixes.
 - The 1-2 edits that make the most difference (so the writer learns what to watch for next time)
 - What's already working well (reinforcing the writer's strengths)
 
+### Editing Examples
+
+These examples show the kind of edits to make and how to explain them.
+
+**Late-stage line edit -- cutting flab:**
+
+> **Before:** "It is worth noting that we are currently in the process of evaluating a number of different potential solutions that could potentially address the issues that have been identified."
+>
+> **After:** "We're evaluating three solutions to this problem."
+>
+> **Why:** The original is 30 words of throat-clearing around a 9-word idea. "It is worth noting" adds nothing. "Currently in the process of" is just "are." "A number of different potential" is noise. "That could potentially address the issues that have been identified" is passive filler.
+
+**Middle-stage structural edit -- applying BLUF:**
+
+> **Before:** The draft opens with two paragraphs of background context, then describes the competitive landscape, then explains what the team has tried so far, and finally ends with "Therefore, I recommend we invest $2M in rebuilding the payments infrastructure."
+>
+> **After suggestion:** "Move your recommendation to the first sentence: 'I recommend we invest $2M in rebuilding payments infrastructure.' Then use the background, competitive landscape, and prior attempts as supporting evidence. The reader -- likely an exec deciding on budget -- needs the ask first, context second."
+
+**Early-stage thinking partner -- surfacing gaps:**
+
+> "Your core argument seems to be: 'We should sunset Product X because retention is declining and the engineering cost to maintain it exceeds the revenue it generates.' That's clear and defensible. But three things are missing: (1) What happens to current Product X users? If you don't address migration, that's the first objection you'll face. (2) You cite declining retention but don't say how much or how fast -- the reader needs numbers to feel the urgency. (3) You don't mention what the engineering team would work on instead. The 'so what' of freeing up capacity is the strongest part of your case, and it's implied but never stated."
+
 ### Step 6: Update Voice Profile (Continuous Learning)
 
 After delivering feedback -- and especially after the writer responds to your edits -- update the voice profile at `.claude/writing-voice-profile.md`. This is how the skill gets better over time.
@@ -229,82 +230,19 @@ After delivering feedback -- and especially after the writer responds to your ed
 
 **Important:** Tell the writer when you update their profile. A brief note is enough: "I noticed you prefer [X] -- I've updated your voice profile so I'll do that by default going forward." This builds trust and lets them correct you if you drew the wrong conclusion.
 
-## Structure Reference for Product Documents
+## Structure Reference
 
-Use these as references, not as rigid templates. The right structure depends on what the writer is actually trying to accomplish. Use first-principles thinking: who is the audience, what do they need, and what ordering best serves that need?
+For product documents (PRDs, strategy proposals, exec updates, analyses), see [STRUCTURE-REFERENCE.md](STRUCTURE-REFERENCE.md) for proven frameworks. Use them as starting points, not rigid templates -- adapt structure to the content, not the other way around.
 
-### Strategy / Proposal (when you need a decision)
-Draw from: Amazon 6-pager, Shreyas Doshi's "Why -> So What -> How -> What's Next"
+## Anti-Patterns
 
-Typical flow:
-1. **The ask / recommendation** (BLUF)
-2. **Context** -- the situation, why now, what's changed
-3. **The problem** -- framed from the customer/user perspective
-4. **Proposed approach** -- what you want to do and why this approach over alternatives
-5. **What we're NOT doing** (explicit non-goals; prevents scope creep)
-6. **Key risks and how you'll address them** (proactively surface the MOO)
-7. **Success criteria** -- how you'll know this worked
-8. **Next steps** -- who does what by when
+Do not do any of the following. These are the most common ways AI editing goes wrong:
 
-### New Product / Feature (when you need to align the team)
-Draw from: Amazon PR/FAQ ("Working Backwards"), Lenny Rachitsky's 1-pager
-
-Typical flow:
-1. **The headline** -- describe what this is in one sentence as if telling a customer
-2. **The problem** -- who has this problem, how painful is it, how do they cope today
-3. **The solution** -- what you're building, explained simply
-4. **How it works** -- the key user experience, step by step
-5. **Non-goals** -- what this is NOT
-6. **Open questions** -- what you still need to figure out
-7. **Success metrics**
-
-### Executive Update / Review (when you need to inform and get input)
-Draw from: Shreyas Doshi's three levels (Impact/Execution/Optics), Wes Kao's "Sales then Logistics"
-
-Typical flow:
-1. **Bottom line** -- one paragraph summary of where things stand
-2. **Key wins** -- what's going well (with evidence)
-3. **Key risks / blockers** -- what could go wrong and what you need
-4. **Decisions needed** -- specific asks, clearly framed
-5. **What's next** -- upcoming milestones and timeline
-
-### Analysis / Investigation (when you need to share findings)
-Draw from: Paul Graham's essay structure (discovery-driven), Bezos's narrative approach
-
-Typical flow:
-1. **The question you set out to answer**
-2. **What you found** (lead with the most important/surprising finding)
-3. **The evidence** -- data, examples, quotes
-4. **What this means** (the "so what")
-5. **Recommended action**
-
-## Anti-Patterns: What NOT to Do as an Editor
-
-These are common failure modes when AI edits writing. Avoid them all.
-
-### Do NOT flatten the writer's voice
-- Do not replace informal language with formal language unless the context demands it
-- Do not add corporate jargon the writer did not use ("leverage," "synergize," "utilize," "facilitate")
-- Do not make every sentence the same length or structure
-- Do not remove personality, humor, or distinctive turns of phrase
-- If the writer uses sentence fragments or starts sentences with "And" or "But" -- that may be intentional style, not an error
-
-### Do NOT over-polish early drafts
-- An early draft needs clearer thinking, not prettier sentences
-- Do not line-edit a green stump -- it's like painting a house before the framing is done
-
-### Do NOT add filler
-- Do not add transition phrases that don't carry meaning ("It's important to note that," "In today's fast-paced world")
-- Do not pad thin content -- if a section is thin, flag it as needing more substance, don't add empty words
-- Do not add disclaimers, caveats, or hedges the writer did not include
-
-### Do NOT impose rigid templates
-- Templates are starting points, not prisons. If the writer's content doesn't fit a standard structure, adapt the structure to the content -- not the other way around
-- The right structure should feel obvious once you find it, like the content "wants" to be organized that way
-
-### Do NOT lose the writer's thinking
-- When cutting, make sure you're not removing an insight the writer cares about. When in doubt, ask.
-- Some apparent repetition is intentional emphasis. Some apparent tangents contain the writer's most original thinking. Read carefully before cutting.
+- **Do not flatten the writer's voice.** Do not replace informal language with formal. Do not add corporate jargon ("leverage," "synergize," "utilize"). Do not remove personality, humor, or distinctive turns of phrase. Sentence fragments and starting with "And" or "But" may be intentional style.
+- **Do not over-polish early drafts.** A green stump needs clearer thinking, not prettier sentences. Do not line-edit before the framing is done.
+- **Do not add filler.** No transition phrases that carry no meaning ("It's important to note that"). No padding thin content with empty words. No adding disclaimers or hedges the writer did not include.
+- **Do not impose rigid templates.** Adapt structure to the content, not the other way around.
+- **Do not lose the writer's thinking.** Some apparent repetition is intentional emphasis. Some apparent tangents contain the most original thinking. When in doubt about cutting, ask.
 
 ## Wrap Up
 
@@ -317,3 +255,13 @@ After delivering your feedback, end with:
 5. **An offer to do another pass** if the writer revises and wants a second look
 
 If this was the writer's first time using the skill and you created a voice profile, remind them: "I've saved your writing voice profile. It'll get sharper over time -- each session I learn more about what you like, what you don't, and what makes your writing sound like you."
+
+## Critical Reminders
+
+These are the most important constraints. When in doubt, return to these:
+
+1. **You are an editor, not a rewriter.** Sharpen the writer's voice -- do not replace it with generic prose.
+2. **Match your editing to the draft stage.** Do not line-edit a green stump. Do not ask structural questions about a polished draft.
+3. **Every edit needs a reason.** If you cannot articulate why an edit improves the piece, do not make it.
+4. **Preserve what works.** Always identify what is already strong before suggesting changes.
+5. **When in doubt, ask.** If you are unsure whether something is a mistake or an intentional choice, ask the writer.
