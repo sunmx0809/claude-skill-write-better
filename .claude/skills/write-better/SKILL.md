@@ -47,7 +47,7 @@ When the user invokes this skill, follow this workflow. Use the TodoWrite tool t
 
 Look for a file at `.claude/writing-voice-profile.md` in the project directory.
 
-- **If it exists**, read it and use it to calibrate your editing. The voice profile tells you the writer's natural style, preferences, and patterns to preserve.
+- **If it exists**, read the full file -- including the Session History and Learned Preferences sections. These capture what you've learned about the writer across previous sessions. Use all of it to calibrate your editing. Pay special attention to Learned Preferences, as these reflect editing choices the writer has explicitly accepted or rejected.
 - **If it does not exist**, proceed to Step 2 for onboarding.
 - **If the user provides a draft directly and seems to want quick feedback**, you may skip onboarding for now but mention that you can create a voice profile to give better feedback in the future.
 
@@ -86,11 +86,26 @@ Create the voice profile file at `.claude/writing-voice-profile.md` with this st
 ## Anti-patterns
 - [Things this writer does NOT do that an AI editor should avoid introducing]
 
+## Learned Preferences
+[This section grows over time. Record specific editing preferences discovered through the writer's feedback, accepted/rejected edits, and recurring patterns across sessions. Examples:]
+- [e.g., "Prefers em dashes over parenthetical asides"]
+- [e.g., "Rejects suggestions to shorten examples -- examples are a deliberate strength"]
+- [e.g., "Likes one-sentence paragraphs for emphasis"]
+
+## Session History
+[Brief log of observations from each editing session. Newest first.]
+
+### [Date] - [Document type / topic]
+- **What I noticed**: [New voice observations from this session]
+- **What the writer accepted**: [Edits or suggestions that landed well]
+- **What the writer pushed back on**: [Edits rejected or modified -- this is the most valuable signal]
+- **Profile updates**: [Any changes made to the sections above based on this session]
+
 ## Last Updated
 [Date]
 ```
 
-Tell the user you've saved their voice profile and will use it for all future editing sessions. Let them know they can ask you to update it anytime.
+Tell the user you've saved their voice profile and will use it for all future editing sessions. The profile will get sharper over time as the skill learns from each session what you accept, reject, and prefer.
 
 ### Step 3: Assess the Draft
 
@@ -184,6 +199,36 @@ Present your edits in a way that teaches, not just fixes.
 - The 1-2 edits that make the most difference (so the writer learns what to watch for next time)
 - What's already working well (reinforcing the writer's strengths)
 
+### Step 6: Update Voice Profile (Continuous Learning)
+
+After delivering feedback -- and especially after the writer responds to your edits -- update the voice profile at `.claude/writing-voice-profile.md`. This is how the skill gets better over time.
+
+**What to watch for:**
+
+1. **Edits the writer rejects or modifies.** This is the strongest signal. If you suggested cutting an example and they kept it, that tells you examples are a deliberate part of their voice. If you formalized their tone and they reverted it, they prefer conversational register. Log these in Learned Preferences.
+
+2. **Edits the writer enthusiastically accepts.** If they say "yes, exactly" to a structural change or a specific rephrasing, that tells you something about what kind of editing they value. Note the pattern.
+
+3. **New voice patterns you observe.** Each new piece of writing is more data. You might notice they always use a particular sentence structure for transitions, or that their paragraphs get shorter when they're making their strongest points. Add these observations to Patterns to Preserve.
+
+4. **Recurring weaknesses.** If you notice the same issue across multiple sessions (e.g., always burying the lead, over-qualifying claims, backstory that runs too long), note it in Session History so you can flag it faster next time.
+
+**How to update:**
+
+- Add a new entry to **Session History** with the date and document type
+- Move any confirmed preferences to **Learned Preferences** (promote observations to rules once you've seen them across 2+ sessions)
+- Update **Key Characteristics** if your understanding of the writer's voice has meaningfully shifted
+- Update **Last Updated** with today's date
+- Keep the profile concise -- if Session History grows beyond 10 entries, summarize older entries into the Learned Preferences and Key Characteristics sections and remove the individual session logs
+
+**When to update:**
+
+- Always add a Session History entry at the end of each editing session
+- Update Learned Preferences when the writer gives you explicit feedback ("I prefer X" or "don't do Y") or when you see the same accept/reject pattern across 2+ sessions
+- Update Key Characteristics and Patterns to Preserve when you have genuine new insight -- not after every session
+
+**Important:** Tell the writer when you update their profile. A brief note is enough: "I noticed you prefer [X] -- I've updated your voice profile so I'll do that by default going forward." This builds trust and lets them correct you if you drew the wrong conclusion.
+
 ## Structure Reference for Product Documents
 
 Use these as references, not as rigid templates. The right structure depends on what the writer is actually trying to accomplish. Use first-principles thinking: who is the audience, what do they need, and what ordering best serves that need?
@@ -268,6 +313,7 @@ After delivering your feedback, end with:
 1. **A brief summary** of the key changes and why they matter
 2. **What's already strong** in the writing (always acknowledge this)
 3. **1-2 patterns to watch for** in future writing (so the writer improves over time)
-4. **An offer to do another pass** if the writer revises and wants a second look
+4. **Voice profile update note** -- if you updated the profile this session, briefly mention what you learned (e.g., "I noticed you consistently prefer short, punchy paragraphs for key points -- I've noted that in your voice profile.")
+5. **An offer to do another pass** if the writer revises and wants a second look
 
-If this was the writer's first time using the skill and you created a voice profile, remind them: "I've saved your writing voice profile so future editing sessions will be calibrated to your style. You can ask me to update it anytime."
+If this was the writer's first time using the skill and you created a voice profile, remind them: "I've saved your writing voice profile. It'll get sharper over time -- each session I learn more about what you like, what you don't, and what makes your writing sound like you."
